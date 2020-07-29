@@ -38,10 +38,10 @@ let questions = [
     },
 
 ];
-console.log (questions[0].answer1);
+
 
 //set loop to add progress to 1/7 everytime there is a new question
-    var totalQuestions = x;    
+     
 
      document.getElementById("question").innerHTML = questions[0].question;
      document.getElementById("choice1").innerHTML = questions[0].answers[0];
