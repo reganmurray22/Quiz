@@ -24,21 +24,21 @@
         </div>
         <div class= "row  answer-container"></row>
             <div class= "col-8">
-                <div class = "row">
-                    <p id = "choice1" class = "choice-text" >Answer 1</p>
+                <div class = "row">                    
+                    <p id = "choice1" class = "choice-text" onclick='storeVar(this.value)' value='1'>Answer 1</p>
                 </div>
                 <div class = "row">
-                    <p id = "choice2" class = "choice-text" >Answer 2</p>
+                    <p id = "choice2" class = "choice-text" onclick='storeVar(this.value)' value='2'>Answer 2</p>
                 </div>
                 <div class = "row">
-                    <p id = "choice3" class = "choice-text" >Answer 3</p>
+                    <p id = "choice3" class = "choice-text" onclick='storeVar(this.value)' value='3'>Answer 3</p>
                 </div>
             </div>
         </div>
         <div>
             <div class= "row button-container">
-                <div class = "col-3">
-                    <p id = "submitBtn">SUBMIT</p>
+                <div class = "col-3 next">
+                    <p></p>
                  </div>
             </div>
         </div>
@@ -48,5 +48,6 @@
 
   </body>
   <script src = "game.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
   </html>
 

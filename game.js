@@ -22,32 +22,32 @@ let questions = [
 
     {
     question: "What is the correct syntax for referring to an external javascript file called 'xxx.js'?",
-    answers: ["\<script href='xxx.js'\>", "\<script url='xxx.js'\>", "\<script src='xxx.js'\>"],
-    solution: "<script src='xxx.js'>",
+    answers: ["<script href='xxx.js'>", "<script url='xxx.js'>", "<script src='xxx.js'>"],
+    solution: "3",
     },
 
     { 
     question: "Which of the following is NOT a reserved word in JavaScript?",
     answers: ["fix", "break", "return"],
-    solution: "fix", 
+    solution: "1", 
     },
 
     { 
     question: "What is the syntax for creating a function in JavaScript?",
     answers: ["function:()", "function()", "function = ()"],
-    solution: "function ()",
+    solution: "2",
     },
 
     { 
     question: "What is the correct syntax for adding comments in JavaScript?",
     answers: ["**comments**", "<!--comments-->", "//comments"],
-    solution:"//comments",
+    solution:"3",
     },
 
     { 
     question: "How do you initialize an array in JavaScript?",
     answers: ["var array = ['A', 'B', 'C']", "var array = (A, B, C)", "var array = 'A', 'B', 'C'"],
-    solution: "var array = ['A', 'B', 'C']",
+    solution: "1",
     },
 
 ]
@@ -75,23 +75,46 @@ function startQuiz () {
 //correct/incorrect
     function checkAnswer () {
 //click event    
-        document.getElementById("submitBtn").addEventListener("click", function () {
+        document.getElementsByClassName("choice-text").addEventListener("click", function () {
 //get text content of DOM element
-            var z = document.getElementsByClassName("choice-text").textContent;   
+            function storeVar(value){
+            let amount = value;
+            }   
 //compare strings
-            if (z.equals(questions[x].solution)) {
+            if (amount.equals(questions[x].solution)) {
 //if they match = correct        
                 function correctAnswer () {            
                     setInterval (document.GetElementsByClassName("choice-text").style.border = "green", 1000);
-                    score++;}
+                    function myFunction() {
+                        var iconCheck = document.createElement("INPUT");
+                        iconCheck.setAttribute("type", "placeholder");
+                        iconCheck.setAttribute("value", data-feather = "check-circle");
+                        iconCheck.setAttribute("color", green)
+                        document.getElementsByClassName.appendChild(iconCheck);
+                      }
+                    score++;
+                }
             } else {
 //if they dont = incorrect 
                 function incorrectAnswer () {
                     setInterval (document.GetElementsByClassName("choice-text").style.border = "red", 1000);
-                    secondsRemaining -= 5;}
+                    function myFunction() {
+                        var iconX = document.createElement("INPUT");
+                        iconX.setAttribute("type", "placeholder");
+                        iconX.setAttribute("value", data-feather = "x-circle");
+                        iconX.setAttribute("color", red)
+                        document.getElementsByClassName.appendChild(iconX);
+                    }
+                    secondsRemaining -= 5;
+                }
             }
         })
-    }
+    function nextQuestion() {
+        var btn = document.createElement("BUTTON");
+        btn.innerText = "NEXT QUESTION"; 
+        document.getElementsByClassName("next").appendChild(btn);
+      }    
+}
 
 
     
