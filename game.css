@@ -2,6 +2,7 @@
     margin: 0;
     width: 100%;
     height: 100vh;
+    align-content: center;
 }
 .choice-text { 
     font-size: 16px;
@@ -21,28 +22,43 @@
     transform: translateY(-1px);
     transition: 150ms;
 }
-
-.spacer {
-    width: 100%;
-    height: 
+#submitBtn { 
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid green;
+    margin-bottom: 10px;
+    color: green;
+    background-color: white;
 }
 
+#submitBtn:hover {
+    cursor: pointer;
+    box-shadow: 0px 5px 15px 0px green;
+    transform: translateY(-1px);
+    transition: 150ms;
+}
 .header {
     width: 100%;
-    height: 
+    height:40px;
 }
 
+
 .question-container {
+    justify-content: space-around;
     width: 100%;
-    height:
 }
 
 .answer-container {
+    justify-content: space-around;
     width: 100%;
-    height:
+
 }
 
 .button-container {
+    justify-content: space-around;
     width: 100%;
-    height:
+
 }
