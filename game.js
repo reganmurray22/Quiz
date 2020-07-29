@@ -52,7 +52,7 @@ let questions = [
 
 ]
 
-let x = 0
+
 
 function startQuiz () {
 
@@ -60,26 +60,44 @@ function startQuiz () {
 // question counter and score
 
 // question counter and score
+    let x = 0
+    let questionCounter = 1;
+    let score = 0; 
+    let progress = score + " / " + questionCounter;
 
-let questionCounter = 1;
-let score = 0; 
-let progress = score + " / " + questionCounter;
-
-document.getElementById("question-counter").textContent = progress;
+    document.getElementById("question-counter").textContent = progress;
 
 //populating question and answer boxes    
     document.getElementById("question").textContent = questions[x].question;
     document.getElementById("choice1").textContent = questions[x].answers[0];
     document.getElementById("choice2").textContent = questions[x].answers[1];
-    document.getElementById("choice3").textContent = questions[x].answers[2];
 
-    document.getElementById("submitBtn").addEventListener("click", getNewQuestion()); 
-}
+//correct/incorrect
+    function checkAnswer () {
+//click event    
+        document.getElementById("submitBtn").addEventListener("click", function () {
+//get text content of DOM element
+            var z = document.getElementsByClassName("choice-text").textContent;   
+//compare strings
+            if (z.equals(questions[x].solution)) {
+//if they match = correct        
+                function correctAnswer () {            
+                    setInterval (document.GetElementsByClassName("choice-text").style.border = "green", 1000);
+                    score++;}
+            } else {
+//if they dont = incorrect 
+                function incorrectAnswer () {
+                    setInterval (document.GetElementsByClassName("choice-text").style.border = "red", 1000);
+                    secondsRemaining -= 5;}
+            }
+        })
+    }
 
 
+    
 function getNewQuestion () {
-questionCounter++
-x++
+questionCounter = questionCounter++
+x = x++
 document.getElementById("question").textContent = questions[x].question;
 document.getElementById("choice1").textContent = questions[x].answers[0];
 document.getElementById("choice2").textContent = questions[x].answers[1];
@@ -89,5 +107,5 @@ document.getElementById("submitBtn").addEventListener("click", getNewQuestion);
 
 }
 //on correct answer score++
-//str1.equals(str2);
+
 
