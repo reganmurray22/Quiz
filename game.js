@@ -12,14 +12,6 @@ var seconds = 60, $seconds = document.querySelector('#timer');
 let questions = [
 
     {
-    question: "Inside which HTML element do we put the Javascript?",
-    answer1: "<script href='xxx.js'>", 
-    answer2: "<script url='xxx.js'>",
-    answer3: "<script src='xxx.js'>",
-    solution: "<script></script>"
-    },
-
-    {
     question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
     answers = ["<script href='xxx.js'>", "<script url='xxx.js'>", "<script src='xxx.js'>"],
     solution: "<script src='xxx.js'>",
