@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+    <div class = "container-fluid">
+        <div class = "row spacer"></div>
+        <header class = "row header">
+            <div class = "col-4 filler"></div>
+            <div class = "col-4">
+                <p class = "question-progress">0</p>
+            </div>
+            <div class = "col-4">
+                <p id = "timer">30</p>
+            </div>     
+        </header>    
+        <section class = "row question-container">    
+            <column class = "col-8"></column>
+            <p id = "question">Question Here</p>
+        </section>
+        <section class= "row  answer-container"></row>
+            <div class= "col-8">
+                <div class = "row">
+                    <p id = "choice1" class = "choice-text" >Answer 1</p>
+                </div>
+                <div class = "row">
+                    <p id = "choice2" class = "choice-text" >Answer 2</p>
+                </div>
+                <div class = "row">
+                    <p id = "choice3" class = "choice-text" >Answer 3</p>
+                </div>
+            </div>
+        </section>
+        <button-section>
+          <row class= "row button-container"></row>
+            <column class = "col-3 submitBtn"></column>
+            <column class = "col-3 continueBtn"></column>
+        </button-section>
+    </div>
+    
+
+
+  </body>
+  <script src = "game2.js"></script>
+  </html>
+
