@@ -2,8 +2,9 @@ let questionCounter = 0;
 let score = 0; 
 let progress = score + " / " + questionCounter;
 
- timer
-let secondsRemaining = 60;
+document.getElementById("question-counter").textContent = progress;
+ 
+let secondsRemaining = 30;
 function countdown() {
     setInterval (function () {
         if (secondsRemaining < 0) {
@@ -83,18 +84,12 @@ function myValue3 () {
     var v = "3";
 }
 
+var x = - 0 
+
+
 function getQuestion () {
-for (x=0; x<=questions.length; x++) {
-
-
-// question counter and score
-      
-    function counterAdd() {
-        questionCounter += 1;
-        var score = newScore;
-        var progress = score + " / " + questionCounter;
-        document.getElementById("question-counter").textContent = progress;    
-    }
+    x++
+    questionCounter += 1;
 
 //populating question and answer boxes 
 
@@ -137,17 +132,9 @@ for (x=0; x<=questions.length; x++) {
             }
         }
     }
-    function questionLoop () {
-        var nextQuestion = document.createElement("BUTTON");;
-        nextQuestion.classList.add("nextQuestionBtn")
-        nextQuestion.onclick = getquestion();
-        document.getElementsByClassName("next").appendChild(nextQuestion);
-    }
-    if (x == questions.length) {
-        return window.location.assign("final-score.html"); 
-        score ++ 5;   
-    }
-    }
+
+    
+    
 }
 getQuestion ();
     
