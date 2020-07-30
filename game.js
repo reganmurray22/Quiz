@@ -3,12 +3,26 @@ let secondsRemaining = 30;
 function countdown() {
     setInterval (function () {
         if (secondsRemaining <= 0) {
-                alert('TIME\'S UP!!');
-                break; 
-            function clearQuiz() {     
-                var final = document.getElementsByClassName("final-score");
-                final.remove();
-            } 
+            let secondsRemaining = 30   
+            alert('TIME\'S UP!!'); 
+            var clear = document.getElementById("final-score");
+            clear.parentNode.removeChild(final-score);
+
+            var successScreen = document.createElement("div");
+            successScreen.classList.add("container-fluid"); 
+            document.getElementById("clean-slate").appendChild(successScreen);
+
+            var iconCheck = document.createElementNS("svg");
+            iconCheck.href = "bootstrap-icons.svg#check-circle";
+            iconCheck.setAttribute("font-size", "200px");
+            iconCheck.setAttribute("color", green)
+            document.getElementsByClassName("container-fluid").appendChild(iconCheck);
+
+            var yourScore = document.createElementNS("h1");
+            yourScore.innerText = "Your Score:" + score;
+            yourScore.setAttribute("font-size", "200px");
+            yourScore.setAttribute("color", green)
+            document.getElementsByClassName("container-fluid").appendChild(iconCheck);
             getScore();        
         } 
         document.querySelector("#timer").innerHTML = secondsRemaining
@@ -16,7 +30,10 @@ function countdown() {
     }, 1000) 
 }
 countdown ();
+function timesUp () {
 
+
+}
 
 // array of possible questions
 
@@ -66,20 +83,23 @@ let questions = [
 
     {
     question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-    answers: ["console.log", "gitHub", "Terminal/Bash"]
+    answers: ["console.log", "gitHub", "Terminal/Bash"],
     solution: "1",
     },
 ]
+    let questionCounter = 0;
+    let score = 0; 
+    let progress = score + " / " + questionCounter;
 
 function getQuestion () {
 
 // question counter and score
-
-    let questionCounter = 1;
-    let score = 0; 
-    let progress = score + " / " + questionCounter;
-
-    document.getElementById("question-counter").textContent = progress;
+      
+    function counterAdd() {
+        questionCounter += 1;
+        var progress = score + " / " + questionCounter;
+        document.getElementById("question-counter").textContent = progress;    
+    }
 
 //populating question and answer boxes 
 
@@ -93,7 +113,8 @@ function getQuestion () {
 //correct/incorrect
     function checkAnswer () {
     //click event    
-            document.getElementsByClassName("choice-text").addEventListener("click", function correctIncorrect() {
+            document.getElementsByClassName("choice-text").addEventListener("click", correctIncorrect());
+            function correctIncorrect () {
     //get text content of DOM element
                 function storeVar(value){
                 let amount = value;
@@ -109,12 +130,12 @@ function getQuestion () {
                             iconCheck.setAttribute("font-size", "10px");
                             iconCheck.setAttribute("color", green)
                             document.getElementsByClassName("icon").appendChild(iconCheck);
-                          }                       
+                        }                       
                         function success () {
                             score += 1;
                             var progress = score + " / " + questionCounter;
-                            document.getElementById("question-counter").textContent = progress;
-                        };
+                            document.getElementsById("question-counter").textContent = progress;
+                        }
                     }
                 } else {
     //if they dont = incorrect 
@@ -125,37 +146,23 @@ function getQuestion () {
                             iconX.href = "bootstrap-icons.svg#x-circle"; 
                             iconX.setAttribute("font-size", "10px");
                             iconX.setAttribute("color", red);
-                            document.getElementByClassName("icon").appendChild(iconX);
+                            document.getElementsByClassName("icon").appendChild(iconX);
                         }
                         secondsRemaining -= 5;
                     }
                 }
-            })
+            }
         function nextQuestion() {
             var btn = document.createElement("BUTTON");
             btn.innerText = "NEXT QUESTION"; 
             btn.classList.add("nextQuestionBtn")
-            document.getElementByClassName("next").appendChild(btn);
-        } 
- 
-// Show next question  
-    document.getElementByClassName("nextQuestionBtn").addEventListener("click", getQuestion () {
-        
-        function onClick() {
-            questionCounter += 1;
-            var progress = score + " / " + questionCounter;
-            document.getElementById("question-counter").textContent = progress;
+            document.getElementsByClassName("next").appendChild(btn);
         }
-    }
-    //score
-    function getScore () {
-        var highScore = document.createElement("p");
-        highScore.innerText = "score"; 
-        highScore.classList.add("highScore")
-        document.getElementsByClassName("final-score").appendChild(highScore);   
-    }   
+    } 
+}
+// Show next question  
+document.getElementsByClassName("nextQuestionBtn").addEventListener("click", getQuestion ()); 
     
-    function saveToLocalStorage() {
-        localStorage.setItem("initials", initialInput.value);
-        localStorage.setItem("score", score.textContent);
-      }
+   
+ 
+    

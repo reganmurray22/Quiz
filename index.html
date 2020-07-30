@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Javascript Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="game.css" />
   </head>
   <body>
-      <div class = "container-fluid">
+      <div id = "indexPg" class = "container-fluid">
           <div id ="home" class="flex-center flex-column">
-            <h1>Javascript Quiz</h1> 
-            <a id = intro class="btn">Click to Play</a> 
-            <a id = scores class="btn" href="./highscores.html">High Scores</a> 
+            <h1 id = "header">Javascript Quiz</h1> 
+            <div id = "body"></div>
+            <a id = "intro" class="btn" onclick="introRules()">PLAY</a> 
+            <a id = "scores" class="btn" href="final-score.html">SCORES</a> 
           </div>
       </div>
   </body>
