@@ -77,8 +77,8 @@ var x = - 1
 
 
 function getQuestion () {
-    x++
-    questionCounter += 1;
+    x++;
+    questionCounter ++;
 
 //populating question and answer boxes 
 
@@ -88,12 +88,11 @@ function getQuestion () {
     document.getElementById("choice3").textContent = questions[x].answers[2];
 
 
-    var v = '';
-  
-    function setval(varval) {
-        v = varval;
-    }
 
+    function setval(varval) {
+    varval = v;
+    
+   
     if (v==(questions[0].solution)) {
     //if they match = correct        
         function correctAnswer () {            
@@ -120,6 +119,7 @@ function getQuestion () {
                 }*/
             secondsRemaining -= 5;                       
         }
+        }   
     }
 }
 getQuestion ();

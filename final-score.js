@@ -8,7 +8,7 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 finalScore.innerText = mostRecentScore;
 
-saveScoreBtn.addEventListener("click", savHighScore());
+saveScoreBtn.addEventListener("click", saveHighScore());
 
 saveHighScore = (e) => {
     e.preventDefault();
