@@ -1,18 +1,21 @@
-// timer
-let secondsRemaining = 10;
+let questionCounter = 0;
+let score = 0; 
+let progress = score + " / " + questionCounter;
+
+ timer
+let secondsRemaining = 60;
 function countdown() {
     setInterval (function () {
         if (secondsRemaining < 0) {
             localStorage.setItem("mostRecentScore", score);
-//go to the final-score page
-            return window.location.assign("final-score.html");
-          }   
+            return window.location.assign("final-score.html");            
         } 
-        document.querySelector("#timer").innerHTML = secondsRemaining
-        secondsRemaining -=1
-    }, 1000) 
+        document.querySelector("#timer").innerHTML = secondsRemaining;
+        secondsRemaining -=1;
+    }, 1000);
 }
 countdown ();
+
 
 
 // array of possible questions
@@ -68,27 +71,19 @@ var questions = [
     },
 ]
 
-let questionCounter = 0;
-let score = 0; 
-let progress = score + " / " + questionCounter;
-
-let x = 0;
-
 function myValue1 () {
     var v = "1";
-    checkAnswer ();
 }
 
 function myValue2 () {
     var v = "2";
-    checkAnswer ();
 }
 
 function myValue3 () {
     var v = "3";
-    checkAnswer ();
 }
 
+function getQuestion () {
 for (x=0; x<=questions.length; x++) {
 
 
@@ -96,6 +91,7 @@ for (x=0; x<=questions.length; x++) {
       
     function counterAdd() {
         questionCounter += 1;
+        var score = newScore;
         var progress = score + " / " + questionCounter;
         document.getElementById("question-counter").textContent = progress;    
     }
@@ -111,7 +107,7 @@ for (x=0; x<=questions.length; x++) {
 //correct/incorrect
     function checkAnswer () {
     //compare strings
-        if (v==(questions[x].solution)) {
+        if (v==(questions[0].solution)) {
     //if they match = correct        
             function correctAnswer () {            
                 setInterval (document.GetElementsByClassName("choice-text").style.border = "green", 1000);
@@ -122,10 +118,8 @@ for (x=0; x<=questions.length; x++) {
                     iconCheck.setAttribute("color", green)
                     document.getElementsByClassName("icon").appendChild(iconCheck);
                 }                       
-                function success () {
-                     score += 1;
-                    var progress = score + " / " + questionCounter;
-                    document.getElementsById("question-counter").textContent = progress;
+                var newScore = function success () {
+                    score += 1;
                     }
                 }
         } else {
@@ -143,9 +137,19 @@ for (x=0; x<=questions.length; x++) {
             }
         }
     }
+    function questionLoop () {
+        var nextQuestion = document.createElement("BUTTON");;
+        nextQuestion.classList.add("nextQuestionBtn")
+        nextQuestion.onclick = getquestion();
+        document.getElementsByClassName("next").appendChild(nextQuestion);
+    }
+    if (x == questions.length) {
+        return window.location.assign("final-score.html"); 
+        score ++ 5;   
+    }
+    }
 }
-
-let mostRecentScore = localStorage.getItem('mostRecentScore');
+getQuestion ();
     
    
  

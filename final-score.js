@@ -1,9 +1,9 @@
-let username = document.getElementById('username');
-let saveScoreBtn = document.getElementById('saveScoreBtn');
-let finalScore = document.getElementById('finalScore');
-let mostRecentScore = localStorage.getItem('mostRecentScore');
+let username = document.getElementById("username");
+let saveScoreBtn = document.getElementById("saveScoreBtn");
+let finalScore = document.getElementById("finalScore");
+let mostRecentScore = localStorage.getItem("mostRecentScore");
 
-const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 
 finalScore.innerText = mostRecentScore;
@@ -19,7 +19,6 @@ saveHighScore = (e) => {
     };
     highScores.push(score);
 
-
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('/');
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    return window.location.assign("high-scores.html");
 };
