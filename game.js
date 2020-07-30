@@ -2,11 +2,11 @@
 let secondsRemaining = 30;
 function countdown() {
     setInterval (function () {
-    if (secondsRemaining <= 0) {
-    clearInterval (secondsRemaining = 0);
-    } 
-    document.querySelector("#timer").innerHTML = secondsRemaining
-    secondsRemaining -=1
+        if (secondsRemaining <= 0) {
+        clearInterval (secondsRemaining = 0);
+        } 
+        document.querySelector("#timer").innerHTML = secondsRemaining
+        secondsRemaining -=1
     }, 1000) 
 }
     if (secondsRemaining <= 0) {
@@ -52,12 +52,7 @@ let questions = [
 
 ]
 
-
-
 function startQuiz () {
-
-
-// question counter and score
 
 // question counter and score
     let x = 0
@@ -71,64 +66,61 @@ function startQuiz () {
     document.getElementById("question").textContent = questions[x].question;
     document.getElementById("choice1").textContent = questions[x].answers[0];
     document.getElementById("choice2").textContent = questions[x].answers[1];
+    document.getElementById("choice3").textContent = questions[x].answers[2];
 
+}
 //correct/incorrect
-    function checkAnswer () {
-//click event    
-        document.getElementsByClassName("choice-text").addEventListener("click", function () {
-//get text content of DOM element
-            function storeVar(value){
-            let amount = value;
-            }   
-//compare strings
-            if (amount.equals(questions[x].solution)) {
-//if they match = correct        
-                function correctAnswer () {            
-                    setInterval (document.GetElementsByClassName("choice-text").style.border = "green", 1000);
-                    function myFunction() {
-                        var iconCheck = document.createElement("INPUT");
-                        iconCheck.setAttribute("type", "placeholder");
-                        iconCheck.setAttribute("value", data-feather = "check-circle");
-                        iconCheck.setAttribute("color", green)
-                        document.getElementsByClassName.appendChild(iconCheck);
-                      }
-                    score++;
-                }
-            } else {
-//if they dont = incorrect 
-                function incorrectAnswer () {
-                    setInterval (document.GetElementsByClassName("choice-text").style.border = "red", 1000);
-                    function myFunction() {
-                        var iconX = document.createElement("INPUT");
-                        iconX.setAttribute("type", "placeholder");
-                        iconX.setAttribute("value", data-feather = "x-circle");
-                        iconX.setAttribute("color", red)
-                        document.getElementsByClassName.appendChild(iconX);
+function checkAnswer () {
+    //click event    
+            document.getElementsByClassName("choice-text").addEventListener("click", function correctIncorrect() {
+    //get text content of DOM element
+                function storeVar(value){
+                let amount = value;
+                }   
+    //compare strings
+                if (amount.equals(questions[x].solution)) {
+    //if they match = correct        
+                    function correctAnswer () {            
+                        setInterval (document.GetElementsByClassName("choice-text").style.border = "green", 1000);
+                        function itIsCorrect() {
+                            var iconCheck = document.createElementNS("svg");
+                            iconCheck.href = "bootstrap-icons.svg#check-circle";
+                            iconCheck.setAttribute("font-size", "10px");
+                            iconCheck.setAttribute("color", green)
+                            document.getElementsByClassName("icon").appendChild(iconCheck);
+                          }
+                        score++;
                     }
-                    secondsRemaining -= 5;
+                } else {
+    //if they dont = incorrect 
+                    function incorrectAnswer () {
+                        setInterval (document.GetElementsByClassName("choice-text").style.border = "red", 1000);
+                        function itIsIncorrect() {
+                            var iconX = document.createElementNS("svg");
+                            iconX.href = "bootstrap-icons.svg#x-circle"; 
+                            iconX.setAttribute("font-size", "10px");
+                            iconX.setAttribute("color", red);
+                            document.getElementsByClassName("icon").appendChild(iconX);
+                        }
+                        secondsRemaining -= 5;
+                    }
                 }
-            }
-        })
-    function nextQuestion() {
-        var btn = document.createElement("BUTTON");
-        btn.innerText = "NEXT QUESTION"; 
-        document.getElementsByClassName("next").appendChild(btn);
-      }    
-}
-
-
-    
-function getNewQuestion () {
-questionCounter = questionCounter++
-x = x++
-document.getElementById("question").textContent = questions[x].question;
-document.getElementById("choice1").textContent = questions[x].answers[0];
-document.getElementById("choice2").textContent = questions[x].answers[1];
-document.getElementById("choice3").textContent = questions[x].answers[2];
-
-document.getElementById("submitBtn").addEventListener("click", getNewQuestion); 
+            })
+        function nextQuestion() {
+            var btn = document.createElement("BUTTON");
+            btn.innerText = "NEXT QUESTION"; 
+            btn.classList.add("nextQuestionBtn")
+            document.getElementsByClassName("next").appendChild(btn);
+}  
+// Show next question  
+document.getElementsByClassName("nextQuestionBtn").addEventListener("click", function getNewQuestion () {
+    questionCounter = questionCounter++
+    x = x++
+    document.getElementById("question").textContent = questions[x].question;
+    document.getElementById("choice1").textContent = questions[x].answers[0];
+    document.getElementById("choice2").textContent = questions[x].answers[1];
+    document.getElementById("choice3").textContent = questions[x].answers[2];
+    checkAnswer ();
+})
 
 }
-//on correct answer score++
-
-
