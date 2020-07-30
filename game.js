@@ -72,19 +72,8 @@ var questions = [
     },
 ]
 
-function myValue1 () {
-    var v = "1";
-}
 
-function myValue2 () {
-    var v = "2";
-}
-
-function myValue3 () {
-    var v = "3";
-}
-
-var x = - 0 
+var x = - 1 
 
 
 function getQuestion () {
@@ -99,42 +88,39 @@ function getQuestion () {
     document.getElementById("choice3").textContent = questions[x].answers[2];
 
 
-//correct/incorrect
-    function checkAnswer () {
-    //compare strings
-        if (v==(questions[0].solution)) {
-    //if they match = correct        
-            function correctAnswer () {            
-                setInterval (document.GetElementsByClassName("choice-text").style.border = "green", 1000);
-                function itIsCorrect () {
-                    var iconCheck = document.createElementNS("svg");
-                    iconCheck.href = "bootstrap-icons.svg#check-circle";
-                    iconCheck.setAttribute("font-size", "10px");
-                    iconCheck.setAttribute("color", green)
-                    document.getElementsByClassName("icon").appendChild(iconCheck);
-                }                       
-                var newScore = function success () {
-                    score += 1;
-                    }
-                }
-        } else {
-    //if they dont = incorrect 
-            function incorrectAnswer () {
-                setInterval (document.GetElementsByClassName("choice-text").style.border = "red", 1000);
-                    function itIsIncorrect() {
-                        var iconX = document.createElementNS("svg");
-                        iconX.href = "bootstrap-icons.svg#x-circle"; 
-                        iconX.setAttribute("font-size", "10px");
-                        iconX.setAttribute("color", red);
-                        document.getElementsByClassName("icon").appendChild(iconX);
-                    }
-                    secondsRemaining -= 5;               
-            }
-        }
+    var v = '';
+  
+    function setval(varval) {
+        v = varval;
     }
 
-    
-    
+    if (v==(questions[0].solution)) {
+    //if they match = correct        
+        function correctAnswer () {            
+            setInterval (document.GetElementsByClassName("choice-text").style.border = "green", 1000);
+                /*function itIsCorrect () {
+                var iconCheck = document.createElementNS("svg");
+                iconCheck.href = "bootstrap-icons.svg#check-circle";
+                iconCheck.setAttribute("font-size", "10px");
+                iconCheck.setAttribute("color", green)
+                document.getElementsByClassName("icon").appendChild(iconCheck);
+                } */                      
+            score += 1;
+        }
+    } else {
+    //if they dont = incorrect 
+        function incorrectAnswer () {
+            setInterval (document.GetElementsByClassName("choice-text").style.border = "red", 1000);
+                /*function itIsIncorrect() {
+                var iconX = document.createElementNS("svg");
+                iconX.href = "bootstrap-icons.svg#x-circle"; 
+                iconX.setAttribute("font-size", "10px");
+                iconX.setAttribute("color", red);
+                document.getElementsByClassName("icon").appendChild(iconX);
+                }*/
+            secondsRemaining -= 5;                       
+        }
+    }
 }
 getQuestion ();
     
