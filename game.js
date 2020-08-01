@@ -85,8 +85,6 @@ function getQuestion () {
     document.getElementById("choice1").textContent = questions[x].answers[0];
     document.getElementById("choice2").textContent = questions[x].answers[1];
     document.getElementById("choice3").textContent = questions[x].answers[2];
-    var solution = questions[x].solution;
-    result (solution);
 }
 
 
@@ -94,7 +92,7 @@ function getQuestion () {
 
 function Random(id) {
         var choice = parseInt(document.getElementById (id).value);
-        if (choice == result()) {                    
+        if (choice == questions[x].solution) {                    
             document.getElementsByClassName("choice-text").style.border = "green";
             document.getElementById ("display").innerHTML = "Correct!";
             score += 1;
