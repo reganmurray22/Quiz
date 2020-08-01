@@ -21,6 +21,19 @@ h1{
     margin-bottom: 20px;
 }
 
+h2{
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: blue;
+    background-color: white;
+   }
+}
+
 #question-counter {
     font-size: 24px;
 }

@@ -12,7 +12,7 @@ function countdown() {
             return window.location.assign("final-score.html");            
         } 
         document.querySelector("#timer").innerHTML = secondsRemaining;
-        secondsRemaining -=1;
+ //       secondsRemaining -=1;
     }, 1000);
 }
 countdown ();
@@ -77,7 +77,10 @@ var x = -1
 
 function getQuestion () {
     x++;
-    questionCounter =  x + 1;
+
+    document.getElementById("result").innerHTML = ""; 
+
+    questionCounter = + 1;
 
 //populating question and answer boxes 
     
@@ -93,18 +96,17 @@ function Random(id) {
     var choice = parseInt(document.getElementById (id).value);
     if (choice == questions[x].solution) {  
         console.log(choice);
-        console.log(questions[x].solution);                  
-        document.getElementById ("display").innerHTML = "Correct!";
-        score += 1;
+        console.log(questions[x].solution);         
+        score ++;
+        document.getElementById("result").innerHTML = "Correct!";   
+
     } else {  
         console.log(choice);
         console.log(questions[x].solution);          
-        secondsRemaining -= 5;                       
-        document.getElementById ("display").innerHTML = "Incorrect!";            
+        secondsRemaining -= 5;                  
+        document.getElementById("result").innerHTML = "Incorrect!";   
     }
 }
- 
-
 getQuestion();
     
    
