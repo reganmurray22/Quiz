@@ -73,56 +73,39 @@ var questions = [
 ]
 
 
-var x = - 1 
-
+var x = -1
 
 function getQuestion () {
     x++;
-    questionCounter ++;
+    questionCounter =  x + 1;
 
 //populating question and answer boxes 
-
+    
     document.getElementById("question").textContent = questions[x].question;
     document.getElementById("choice1").textContent = questions[x].answers[0];
     document.getElementById("choice2").textContent = questions[x].answers[1];
     document.getElementById("choice3").textContent = questions[x].answers[2];
-
-
-
-    function setval(varval) {
-    varval = v;
-    
-   
-    if (v==(questions[0].solution)) {
-    //if they match = correct        
-        function correctAnswer () {            
-            setInterval (document.GetElementsByClassName("choice-text").style.border = "green", 1000);
-                /*function itIsCorrect () {
-                var iconCheck = document.createElementNS("svg");
-                iconCheck.href = "bootstrap-icons.svg#check-circle";
-                iconCheck.setAttribute("font-size", "10px");
-                iconCheck.setAttribute("color", green)
-                document.getElementsByClassName("icon").appendChild(iconCheck);
-                } */                      
-            score += 1;
-        }
-    } else {
-    //if they dont = incorrect 
-        function incorrectAnswer () {
-            setInterval (document.GetElementsByClassName("choice-text").style.border = "red", 1000);
-                /*function itIsIncorrect() {
-                var iconX = document.createElementNS("svg");
-                iconX.href = "bootstrap-icons.svg#x-circle"; 
-                iconX.setAttribute("font-size", "10px");
-                iconX.setAttribute("color", red);
-                document.getElementsByClassName("icon").appendChild(iconX);
-                }*/
-            secondsRemaining -= 5;                       
-        }
-        }   
-    }
+    var solution = questions[x].solution;
+    result (solution);
 }
-getQuestion ();
+
+
+//incorrect and correct
+
+function Random(id) {
+        var choice = parseInt(document.getElementById (id).value);
+        if (choice == result()) {                    
+            document.getElementsByClassName("choice-text").style.border = "green";
+            document.getElementById ("display").innerHTML = "Correct!";
+            score += 1;
+        } else {
+            document.getElementsByClassName("choice-text").style.border = "red";
+            secondsRemaining -= 5;                       
+            document.getElementById ("display").innerHTML = "Incorrect!";            
+        }
+}
+
+getQuestion();
     
    
  
