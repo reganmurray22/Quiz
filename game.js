@@ -1,10 +1,6 @@
-let questionCounter = 0;
 let score = 0; 
-let progress = score + " / " + questionCounter;
 
-document.getElementById("question-counter").textContent = progress;
- 
-let secondsRemaining = 60;
+let secondsRemaining = 30;
 function countdown() {
     setInterval (function () {
         if (secondsRemaining < 0) {
@@ -12,7 +8,7 @@ function countdown() {
             return window.location.assign("final-score.html");            
         } 
         document.querySelector("#timer").innerHTML = secondsRemaining;
- //       secondsRemaining -=1;
+        secondsRemaining -=1;
     }, 1000);
 }
 countdown ();
@@ -75,12 +71,11 @@ var questions = [
 
 var x = -1
 
+
 function getQuestion () {
     x++;
 
     document.getElementById("result").innerHTML = ""; 
-
-    questionCounter = + 1;
 
 //populating question and answer boxes 
     
@@ -97,8 +92,10 @@ function Random(id) {
     if (choice == questions[x].solution) {  
         console.log(choice);
         console.log(questions[x].solution);         
-        score ++;
-        document.getElementById("result").innerHTML = "Correct!";   
+        document.getElementById("result").innerHTML = "Correct!"; 
+        score += 1;
+        console.log (score); 
+        document.getElementById("score").innerHTML = score;
 
     } else {  
         console.log(choice);
@@ -106,6 +103,8 @@ function Random(id) {
         secondsRemaining -= 5;                  
         document.getElementById("result").innerHTML = "Incorrect!";   
     }
+
+
 }
 getQuestion();
     
