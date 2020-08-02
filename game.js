@@ -1,5 +1,6 @@
 let score = 0; 
-
+ 
+// timer
 let secondsRemaining = 30;
 function countdown() {
     setInterval (function () {
@@ -71,6 +72,7 @@ var questions = [
 
 var x = -1
 
+// question loop
 
 function getQuestion () {
     x++;
@@ -87,6 +89,7 @@ function getQuestion () {
 
 
 //incorrect and correct
+
 function Random(id) {
     var choice = parseInt(document.getElementById (id).value);
     if (choice == questions[x].solution) {  
@@ -104,10 +107,10 @@ function Random(id) {
         document.getElementById("result").innerHTML = "Incorrect!";   
     }
 
-
 }
 getQuestion();
     
-   
+
+
  
     

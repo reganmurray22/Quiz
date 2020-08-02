@@ -1,8 +1,17 @@
-const highScoresList = document.getElementById("highScoresList");
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+let winner = localStorage.getItem("nameKey");
+let highScore = localStorage.getItem("scoreKey");
 
-highScoresList.innerHTML = highScores
-  .map(score => {
-    return `<li class="high-score">${score.name} - ${score.score}</li>`;
-  })
-  .join("");
+let currentHighScore = 0
+
+const highScoresList = document.getElementById("highScoresList");
+
+if (highScore >= currentHighScore) {
+  var yourScore = document.createElement("li");
+  yourScore.innerText = winner + "   " + highScore;
+  document.getElementById("highScoresList").appendChild(yourScore);
+} 
+
+
+
+ 
+
