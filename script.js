@@ -10,7 +10,7 @@ function introRules () {
     document.getElementById("header").innerHTML = "How to Play:";
     
     var rules = document.createElement("p");
-    rules.innerText = "You will presented with a series of questions about Javascript. Each question has three possible answers, answer correctly to earn a point. You have 30 seconds to answer as many questions as you can. For each incorrect answer 5 seconds will be deducted from your time."; 
+    rules.innerText = "You will be presented with a series of questions about Javascript. Each question has three possible answers, answer correctly to earn a point. You have 30 seconds to answer as many questions as you can. For each incorrect answer 5 seconds will be deducted from your time."; 
     document.getElementById("body").appendChild(rules);
 
     var start = document.createElement("p");

@@ -1,16 +1,23 @@
-let winner = localStorage.getItem("nameKey");
-let highScore = localStorage.getItem("scoreKey");
+let winner = localStorage.getItem("name");
+let highScore = localStorage.getItem("score");
 
-let currentHighScore = 0
+console.log (winner);
+console.log (highScore);
+
+let result = winner.concat ("    ", highScore);
+
+let currentHighScore = 0;
 
 const highScoresList = document.getElementById("highScoresList");
 
 if (highScore >= currentHighScore) {
   var yourScore = document.createElement("li");
-  yourScore.innerText = winner + "   " + highScore;
+  yourScore.innerHTML = result;
+  yourScore.setAttribute("font-size", 16);
   document.getElementById("highScoresList").appendChild(yourScore);
-} 
 
+  currentHighScore = highScore;
+}
 
 
  

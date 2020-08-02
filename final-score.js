@@ -3,24 +3,15 @@ console.log (mostRecentScore);
 
 document.getElementById("finalScore").innerText = mostRecentScore;
 
-let username = document.getElementById("username");
+var username = toString (document.getElementById("username").value);
 
-document.getElementById("saveScoreBtn").addEventListener("click", saveHighScore());
+console.log (username);
 
-function saveHighScore() {
-
-    const result = {
-        nameKey: name,
-        nameValue: username.value,
-        scoreKey: score,
-        scoreValue: mostRecentScore,
-    }  
-
-    console.log(nameKey, nameValue);
-    console.log (scoreKey, scoreValue);
+document.getElementById("saveScoreBtn").addEventListener("click", function saveHighScore() {
     
-    localStorage.setItem (nameKey, nameValue);
-    localStorage.setItem (scoreKey, scoreValue);
+    localStorage.setItem ("name", username);
+    localStorage.setItem ("score", mostRecentScore);
+    
 
     return window.location.assign("high-scores.html");
-};
+});
