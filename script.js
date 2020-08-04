@@ -1,11 +1,7 @@
-//var backgroundImage = document.getElementById("indexPg");
-
-//backgroundImage.setAttribute("background-image", "url("coding.png")");
-//backgroundImage.setAttribute("background-size", "cover");
-
 
 function introRules () {
-    document.getElementById("indexPg").style.background = "none";
+    
+    document.getElementById("indexPg").removeAttribute("background-image");
 
     document.getElementById("header").innerHTML = "How to Play:";
     

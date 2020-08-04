@@ -1,24 +1,35 @@
-let winner = localStorage.getItem("name");
-let highScore = localStorage.getItem("score");
+let mostRecentScore =localStorage.getItem("mostRecentScore");
+console.log (mostRecentScore);
 
-console.log (winner);
-console.log (highScore);
+let highScoreGetter = JSON.parse(localStorage.getItem("highScoreGetter"));
+var result = highScoreGetter.name + "  " + highScoreGetter.score;
 
-let result = winner.concat ("    ", highScore);
+var currentHighScore = localStorage.getItem("newHighScore");
 
-let currentHighScore = 0;
+const highScoresList = [];
 
-const highScoresList = document.getElementById("highScoresList");
+if (currentHighScore == null) {
+  var currentHighScore = "0";
+  highScoresList();
+} else {
+  function highScoresList () {
+    if (mostRecentScore >= currentHighScore) { 
+      highScoresList.unshift(result);
+      currentHighScore = mostRecentScore;
+      localStorage.setItem("newHighScore", currentHighScore);
+    }
 
-if (highScore >= currentHighScore) {
-  var yourScore = document.createElement("li");
-  yourScore.innerHTML = result;
-  yourScore.setAttribute("font-size", 16);
-  document.getElementById("highScoresList").appendChild(yourScore);
+    function highScoreArray(array) {
+      var scoresList = document.createElement('ul');
+      for (var i = 0; i < 3; i++) {
+        var yourScore = document.createElement('li');
+        yourScore.setAttribute("font-size", 16);
+        yourScore.appendChild(document.createTextNode(array[i]));
+        scoresList.appendChild(yourScore);
+      }
+      return scoresList;
+    }
 
-  currentHighScore = highScore;
+    document.querySelector('H1').appendChild(highScoreArray(highScoresList));
+  } 
 }
-
-
- 
-
