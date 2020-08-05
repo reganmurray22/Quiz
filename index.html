@@ -9,13 +9,18 @@
     <link rel="stylesheet" href="game.css" />
   </head>
   <body>
-      <div id = "indexPg" class = "container-fluid">
-          <main id ="home" class="flex-center flex-column">
+      <div id = indexPg class = "container"> 
+        <div class = "row" style= "height:40px;"></div>
+        <div class = "row">
+          <main id ="home" class="col-md-8">
             <h1 id = "header">Javascript Quiz</h1> 
             <div id = "body"></div>
-            <a id = "intro" class="btn" onclick="introRules()">PLAY</a> 
-            <a id = "scores" class="btn" href="high-scores.html">SCORES</a> 
+            <section id = "buttons" class = "row">
+              <a id = "intro" class="btn" onclick="introRules()">PLAY</a> 
+              <a id = "scores" class="btn" href="high-scores.html">SCORES</a> 
+            </section>
           </main>
+        </div>
       </div>
   </body>
   <script src = "script.js"></script>
