@@ -27,7 +27,7 @@ function introRules () {
 
     var startBtn = document.createElement("a");
     startBtn.innerText = "START";
-    document.getElementById("buttons").appendChild(startBtn);
+    document.getElementById("buttons").prepend(startBtn);
     startBtn.classList.add("btn");
     startBtn.setAttribute ("href", "game.html");
 

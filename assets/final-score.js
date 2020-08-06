@@ -5,15 +5,16 @@ let highScore = [];
 
 document.getElementById("finalScore").innerText = mostRecentScore;
 
-var username = document.getElementById("username");
+
 
 document.getElementById("saveScoreBtn").addEventListener("click", function saveHighScore() {
+    var username = document.getElementById("username").value;    
     score = {
     name: username,
     score: mostRecentScore,
     }
  
-    localStorage.setItem("highScore", JSON.stringify(score));
+    var str = localStorage.setItem("highScore", JSON.stringify(score));
 
     return window.location.assign("high-scores.html");
 

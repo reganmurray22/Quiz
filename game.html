@@ -6,56 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Javascript Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="assets/game.css" />
 </head>
-<body id = "clean-slate">
-    <div id = "final-score"  class = "container-fluid">
+<body>
+    <div id = "final-score"  class = "container">
         <header class = "row header">
-            <div class = "col-2" id = "score">
+            <div class = "col-md-2" id = "score">
                 0
             </div>
-            <div class = "col-2" id = "timer">
+            <div class = "col-md-2" id = "timer">
                 00
-            </div>
-            <div class = "col-2"></div>    
+            </div>  
         </header>    
         <div class = "row">    
-            <div class = "col-8 container"></div>
+            <div class = "col-md-8 container"></div>
             <p id = "question">Question Here</p>
         </div>
-        <div class= "row"></row>
-            <div class= "col-4 container">
-                    
+        <div class= "row">
+            <div class= "col-4 container">                    
                 <button id="choice1" class = "btn" onclick = Random(this.id) value="1">choice1
                 </button>
                 <button id="choice2" class = "btn"  onclick = Random(this.id) value="2">choice2
                 </button>
                 <button id="choice3"  class = "btn" onclick = Random(this.id) value="3">choice3
                 </button>
-                <h2 id ="result"></h2>
-                    
+                <p id ="result"></p>
             </div>
-<!--icons            
-            <div class = "col 2">
-                <div class = "row icon">                                       
-                </div>
-                <div class = "row icon">                   
-                </div>
-                <div class = "row icon">
-                </div>
-            </div>
-        -->
+        </div>    
+        <div clas s= "row"> 
+            <div class= "col-4 container">
+                <button class = nextQuestionBtn onclick = "getQuestion()" >NEXT</button>   
+            </div>      
+        </div>
 
-        </div>
-        <div>
-            <div class= "row">
-                <div class = "col-4 container">
-                    <button class = nextQuestionBtn onclick = "getQuestion()" >NEXT</button>
-                </div>
-            </div>
-        </div>
     </div>   
 </body>
-<script src = "game.js"></script>
+<script src = "assets/game.js"></script>
 </html>
 

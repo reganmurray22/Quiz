@@ -7,21 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Congrats!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="assets/game.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="end" class="flex-center flex-column">
-        <h1 id="finalScore"></h1>
+    <div class="indexPg">
+      <div class = "row" style= "height:40px"></div>
+      <div class = "row">
+        <header class="col-md-8">
+          <h1 id="finalScore"></h1>
+        </header> 
+      </div> 
         <form>
-          <input type="text" name="username" id="username" placeholder="username"/>
-          <a type="submit" id="saveScoreBtn" class = "btn" href = "high-scores.html"> 
-            SAVE
-          </a>
+          <main class = "row">
+              <div class= "col-4 container">
+                <input type="text" name="username" id="username" placeholder="username"/>
+                <a type="submit" id="saveScoreBtn" class = "btn" href = "high-scores.html"> 
+                SAVE
+                </a>
+              </div> 
+            </main>    
         </form>
-        <a class="btn" href="game.html">PLAY AGAIN!</a>
+        <div class = "row">
+          <div class= "col-4 container"> 
+            <a class="btn" href="game.html">PLAY AGAIN!</a>
+          </div> 
+        </div>  
       </div>
     </div>
-    <script src="final-score.js"></script>
+    <script src="assets/final-score.js"></script>
   </body>
 </html>
